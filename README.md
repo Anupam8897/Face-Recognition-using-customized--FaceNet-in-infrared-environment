@@ -1,101 +1,104 @@
-[![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/uses-machine-learning.svg)](https://forthebadge.com)
+Real-Time Face Recognition Using FaceNet on TensorFlow 2.X
+A robust, real-time facial recognition system built using the pre-trained FaceNet model and MTCNN for face detection.
 
-# Real-time Face Recognition Using FaceNet on TensorFlow 2.X
 
-A robust real-time facial recognition system using the pretrained FaceNet model and MTCNN for face detection.
+📌 Features
+Real-time face detection and recognition
 
-![Demo](MEDIA/gif.gif)
+Supports multiple faces in a single frame
 
-## Table of Contents
-- [Features](#features)
-- [Quick Start](#quick-start)
-- [Detailed Usage](#detailed-usage)
-- [Project Structure](#project-structure)
-- [Dependencies](#dependencies)
-- [Troubleshooting](#troubleshooting)
-- [Credits](#credits)
+Easily add new users to the system
 
-## Features
-- Real-time face detection and recognition
-- Support for multiple faces in the same frame
-- Easy addition of new faces to the recognition system
-- Works with TensorFlow 2.X
-- Pre-trained weights available for quick setup
+Uses FaceNet for facial embeddings
 
-## Quick Start
+Built with TensorFlow 2.X
 
-1. Clone this repository
-2. Download pre-trained weights from [here](https://drive.google.com/drive/folders/1scGoVCQp-cNwKTKOUqevCP1N2LlyXU3l?usp=sharing) and place in project root
-3. Add your face images:
-   ```bash
-   mkdir Faces/YourName
-   # Add 2-3 clear photos of your face to this directory
-   ```
-4. Train the system:
-   ```bash
-   python train_v2.py
-   ```
-5. Run real-time recognition:
-   ```bash
-   python detect.py
-   ```
+Pre-trained weights available for quick start
 
-## Detailed Usage
+🚀 Quick Start
+# Clone the repository
+git clone https://github.com/yourusername/Face-recognition-Using-Facenet-On-Tensorflow-2.X.git
+cd Face-recognition-Using-Facenet-On-Tensorflow-2.X
 
-### Training
-- The system requires at least 2-3 images per person for effective recognition
-- Images should be clear, well-lit, and show the face from different angles
-- Training will generate encodings in `encodings/encodings.pkl`
+# Install dependencies
+pip install -r requirements.txt
 
-### Detection
-- Press 'q' to quit the real-time detection
-- The system shows confidence scores for recognized faces
-- Unknown faces will be labeled as "Unknown"
+# Download pretrained weights and place in the root directory
+# Add face images
+mkdir Faces/YourName
+# Add 2-3 clear face images into this directory
 
-## Project Structure
-```
+# Train the model
+python train_v2.py
+
+# Start real-time recognition
+python detect.py
+
+📘 Detailed Usage
+🏋️ Training
+Use 2–3 clear and well-lit face images per person
+
+Images should be from slightly different angles
+
+Encodings will be saved to encodings/encodings.pkl
+
+👁️ Real-time Detection
+Press q to quit
+
+Shows confidence scores for detected faces
+
+Unknown faces will be labeled as "Unknown"
+
+🗂️ Project Structure
+graphql
+Copy
+Edit
 Face-recognition-Using-Facenet-On-Tensorflow-2.X/
-├── architecture.py       # FaceNet model architecture for TF 2.X
-├── detect.py             # Real-time face detection script
-├── train_v2.py           # Training script
-├── Custo_face_net_1.ipynb # Jupyter notebook with custom implementation
-├── facenet_keras_weights.h5 # Pretrained weights
-├── LICENSE
-├── README.md
+├── architecture.py               # FaceNet model architecture (TF 2.X)
+├── detect.py                     # Real-time detection script
+├── train_v2.py                   # Face encoding training script
+├── Custo_face_net_1.ipynb        # Notebook for custom model testing
+├── facenet_keras_weights.h5      # Pre-trained FaceNet weights
 ├── encodings/
-│   └── encodings.pkl     # Saved face encodings
-├── Faces/                # Training images
+│   └── encodings.pkl             # Generated facial embeddings
+├── Faces/                        # Folder for face images
 │   ├── Person1/
-│   ├── Person2/
-│   └── .../
-└── MEDIA/
-    └── gif.gif           # Demo gif
-```
+│   └── Person2/
+├── MEDIA/
+│   └── gif.gif                   # Demo animation
+├── LICENSE
+└── README.md
+🧰 Dependencies
+TensorFlow >= 2.3.0
 
-## Dependencies
-```
-TensorFlow 2.3.0+
-numpy
-opencv-python
-mtcnn
-scikit-learn
-scipy
-```
+NumPy
+
+OpenCV-Python
+
+MTCNN
+
+Scikit-learn
+
+SciPy
 
 Install with:
-```bash
+
+bash
+Copy
+Edit
 pip install -r requirements.txt
-```
+🛠️ Troubleshooting
+Shape mismatch? — Ensure you're using the correct facenet_keras_weights.h5 file
 
-## Troubleshooting
-- If you get shape mismatch errors, ensure you're using the correct pretrained weights
-- For performance issues, try reducing the input resolution in detect.py
-- Make sure all face images are properly aligned and visible
+Slow performance? — Reduce camera resolution in detect.py
 
-## Credits
-- Original FaceNet paper: [FaceNet: A Unified Embedding for Face Recognition and Clustering](https://arxiv.org/abs/1503.03832)
-- Inspired by: [Practical-AI/Face](https://github.com/Practical-AI/Face)
-- Detailed explanation: [Face Recognition with FaceNet and MTCNN](https://arsfutura.com/magazine/face-recognition-with-facenet-and-mtcnn/)
+Poor accuracy? — Make sure face images are well-lit, front-facing, and not blurry
 
-![visitors](https://visitor-badge.glitch.me/badge?page_id=page.https://github.com/R4j4n/Face-recognition-Using-Facenet-On-Tensorflow-2.X)
+🧠 Credits
+FaceNet Paper: FaceNet: A Unified Embedding for Face Recognition and Clustering
+
+Inspired by Practical-AI/Face
+
+Based on: Face Recognition with FaceNet and MTCNN
+
+Let me know if you want to add sections for model architecture details or Docker setup!
